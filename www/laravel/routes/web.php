@@ -11,6 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['web']], function (){
+    Route::get('/', function (){
+        return view('index');
+    })->name('index');
+
+    Route::get('/adminlogin', [
+        'uses' => 'AdminLogin@showAdminLogin',
+        'as' => 'adminlogin'
+    ]);
+
+    Route::get('/adminregister', [
+        'uses' => 'AdminRegister@showAdminRegister',
+        'as' => 'adminregister'
+    ]);
+
+    Route::post('/adminregister', [
+        'uses' => 'AdminRegister@doAdminRegister',
+        'as' => 'adminregister'
+    ]);
 });
