@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use \Illuminate\Http\Request;
+use App\Admin;
+use Illuminate\Http\Request;
 
 class AdminRegister extends Controller 
 {
@@ -19,10 +20,16 @@ class AdminRegister extends Controller
             'lastname' => 'required|alpha',
             'email' => 'required|email',
             'password' => 'required',
-            'confirm_password' => 'same:pass',
+            'confirm_password' => 'same:password',
         ]);
-        
 
-        return view('adminregister');
+            $admin = new Admin();
+            $admin->firstname = $request['firstname'];
+            $admin->lastname = $request['lastname'];
+            $admin->email = $request['email'];
+            $admin->password = bcrypt($request['password']);
+            $admin->save();
+        
+        return view('adminlogin');
     }
 }
