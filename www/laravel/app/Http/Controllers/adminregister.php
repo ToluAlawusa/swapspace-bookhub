@@ -15,21 +15,21 @@ class AdminRegister extends Controller
 
     public function doAdminRegister(Request $request) {
 
-   $this->validate($request, [
-            'firstname' => 'required|alpha',
-            'lastname' => 'required|alpha',
-            'email' => 'required|email',
-            'password' => 'required',
-            'confirm_password' => 'same:password',
-        ]);
+       $this->validate($request, [
+                'firstname' => 'required|alpha',
+                'lastname' => 'required|alpha',
+                'email' => 'required|email',
+                'password' => 'required',
+                'confirm_password' => 'same:password',
+            ]);
 
-            $admin = new Admin();
-            $admin->firstname = $request['firstname'];
-            $admin->lastname = $request['lastname'];
-            $admin->email = $request['email'];
-            $admin->password = bcrypt($request['password']);
-            $admin->save();
-        
-        return view('adminlogin');
+                $admin = new Admin();
+                $admin->firstname = $request['firstname'];
+                $admin->lastname = $request['lastname'];
+                $admin->email = $request['email'];
+                $admin->password = bcrypt($request['password']);
+                $admin->save();
+            
+            return view('adminlogin');
     }
 }
