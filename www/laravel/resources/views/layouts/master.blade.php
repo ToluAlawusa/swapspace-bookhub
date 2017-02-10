@@ -15,8 +15,8 @@
 
         <section class="foot">
             <!-- footer starts here-->
-            <div class="footer">
-                <p class="copyright">&copy; copyright 2016</p>
+            <div>
+                <p>&copy; 2016</p>
             </div>
         </section>
     </body>

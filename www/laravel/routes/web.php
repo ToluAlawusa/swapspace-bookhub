@@ -35,4 +35,16 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'AdminRegister@doAdminRegister',
         'as' => 'adminregister'
     ]);
+
+    Route::get('/addcategory', [
+        'uses' => 'AddCategory@showAddCategory',
+        'as' => 'addcategory'
+    ]);
+
+    
+    Route::post('/addcategory', [
+        'uses' => 'AddCategory@doAddCategory',
+        'as' => 'addcategory'
+    ]);
+
 });
