@@ -47,4 +47,9 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'addcategory'
     ]);
 
+    Route::get('/viewcategory', [
+        'uses' => 'ViewCategory@showViewCategory',
+        'as' => 'viewcategory'
+    ]);
+
 });
