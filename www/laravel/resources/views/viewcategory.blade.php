@@ -15,8 +15,8 @@
 				<tr>
 	                <td>{!! $cat->category_id !!}</td>
 	                <td>{!! $cat->category_name !!}</td>
-	                <td> <a href="/editcategories/{!! $cat->category_id !!}/">edit</a></td>
-	                <td> <a href="/deletecategories/{!! $cat->category_id !!}/">delete</a></td>
+	                <td> <a href="{{ route('editcategory', $cat->category_id) }}">edit</a></td>
+	                <td> <a href="/deletecategory/{!! $cat->category_id !!}">delete</a></td>
 	            </tr>
 	               @endforeach
 						    

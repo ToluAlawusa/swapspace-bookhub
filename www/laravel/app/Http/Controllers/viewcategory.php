@@ -11,7 +11,6 @@ class ViewCategory extends Controller
 
 	public function showViewCategory() {
 
-            $cat = Category::all();
-          return view('viewcategory', ['cat' => $cat]);
+          return view('viewcategory', ['cat'=>Category::getCategories()]);
 	}
 }
