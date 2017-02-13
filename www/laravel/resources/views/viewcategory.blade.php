@@ -15,14 +15,15 @@
 				<tr>
 	                <td>{!! $cat->category_id !!}</td>
 	                <td>{!! $cat->category_name !!}</td>
-	                <td> <a href="{{ route('editcategory', $cat->category_id) }}">edit</a></td>
-	                <td> <a href="/deletecategory/{!! $cat->category_id !!}">delete</a></td>
+	                <td> <a href="/editcategory/{!! $cat->category_id !!}/">edit</a></td>
+	                <td> <a href="/deletecategory/{!! $cat->category_id !!}/">delete</a></td>
 	            </tr>
 	               @endforeach
 						    
 	        </tbody>
 	    </table>
-	    	<input type="hidden" value="{{ Session::token() }}" name="_token">
+	    <input type="hidden" value="{{ Session::token() }}" name="_token">
+	    	
 	</div>
 
 

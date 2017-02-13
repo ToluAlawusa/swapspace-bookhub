@@ -6,18 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+
+    protected $primaryKey = 'product_id';
+    
     public static function getProduct() {
-        $prod = Products::all();
+        $prod = Product::all();
         return $prod;
     }
 
     public static function getProductId($id) {
-  		$prodid = Products::where("product_id", '=', $id)->first();
+  		$prodid = Product::where("product_id", '=', $id)->first();
   		return $prodid;
     }
 
     public static function showProductById($id) {
-	    $showp = Products::where('category_id', '=', $id)->get();
+	    $showp = Product::where('category_id', '=', $id)->get();
 	    return $showp;
     }
 	

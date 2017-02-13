@@ -52,9 +52,19 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'viewcategory'
     ]);
 
-    Route::get('/editcategory/{$id}', [
+    Route::get('/editcategory/{id}/', [
         'uses' => 'EditCategory@showEditCategory',
         'as' => 'editcategory'
+    ]);
+
+    Route::post('/editcategory/{id}/', [
+        'uses' => 'EditCategory@doEditCategory',
+        'as' => 'editcategory'
+    ]);
+
+     Route::get('/deletecategory/{id}/', [
+        'uses' => 'DeleteCategory@doDeleteCategory',
+        'as' => 'deletecategory'
     ]);
 
      Route::get('/addproduct', [
