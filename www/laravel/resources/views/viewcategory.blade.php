@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-	<div>
+	<div class="wrapper">
 	    <table id="tab">
 			<thead>
 				<tr>

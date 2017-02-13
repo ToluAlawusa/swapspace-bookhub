@@ -77,6 +77,26 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'addproduct'
     ]);
 
+     Route::get('/viewproduct', [
+        'uses' => 'ViewProduct@showViewProduct',
+        'as' => 'viewproduct'
+    ]);
+
+     Route::get('/editproduct/{id}/', [
+    'uses' => 'EditProduct@showEditProduct',
+    'as' => 'editproduct'
+    ]);
+
+    Route::post('/editproduct/{id}/', [
+        'uses' => 'EditProduct@doEditProduct',
+        'as' => 'editproduct'
+    ]);
+
+     Route::get('/deleteproduct/{id}/', [
+        'uses' => 'DeleteProduct@doDeleteProduct',
+        'as' => 'deleteproduct'
+    ]);
+
     
     
 });
