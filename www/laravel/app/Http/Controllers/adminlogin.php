@@ -21,10 +21,12 @@ class AdminLogin extends Controller
                 'email' => 'required|email',
                 'password' => 'required',
             ]);
+
             
             if(!Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
             	return redirect()->back()->with(['fail' => 'email or password incorrect']);
             }
+
 
             return redirect()->route('addcategory');
     }

@@ -13,7 +13,7 @@
 	        @endif    
 	    <div>
 		<label>category name:</label>
-		<input type="text" name="cname" placeholder="Post name" value="" >
+		<input type="text" name="cname" placeholder="Post name" value="{!! $cat->category_name !!}" >
 		</div>
 	
 

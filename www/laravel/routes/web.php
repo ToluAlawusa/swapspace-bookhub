@@ -12,7 +12,7 @@
 */
 
 Route::group(['middleware' => ['web']], function (){
-    Route::get('/', function (){
+    Route::get('/index', function (){
         return view('index');
     })->name('index');
 
@@ -35,6 +35,7 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'AdminRegister@doAdminRegister',
         'as' => 'adminregister'
     ]);
+
 
     Route::get('/addcategory', [
         'uses' => 'AddCategory@showAddCategory',
@@ -83,8 +84,8 @@ Route::group(['middleware' => ['web']], function (){
     ]);
 
      Route::get('/editproduct/{id}/', [
-    'uses' => 'EditProduct@showEditProduct',
-    'as' => 'editproduct'
+	    'uses' => 'EditProduct@showEditProduct',
+	    'as' => 'editproduct'
     ]);
 
     Route::post('/editproduct/{id}/', [
@@ -97,6 +98,11 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'deleteproduct'
     ]);
 
-    
+
+
+	 Route::get('/adminlogout', [
+	    'uses' => 'AdminLogout@doAdminLogout',
+	    'as' => 'adminlogout'
+	]);
     
 });

@@ -11,7 +11,7 @@ class EditCategory extends Controller
 
 	public function showEditCategory($id) {
 
-          return view('editcategory', ['caty'=>Category::getCategoryById($id), 'id'=>$id]);
+          return view('editcategory', ['cat'=>Category::getCategoryById($id), 'id'=>$id]);
 	}
 
 	public function doEditCategory(Request $request, $id) {

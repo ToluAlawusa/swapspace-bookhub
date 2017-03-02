@@ -18,7 +18,12 @@ class Category extends Model
     public static function getCategoryById($id) {
   		$caty = Category::where("category_id", '=', $id)->first();
   		return $caty;
-  }
+    }
+
+    public static function relateBelongs() {
+
+        return $this->hasMany('App\Product');
+    }
 
 	
 }

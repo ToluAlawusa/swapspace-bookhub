@@ -23,5 +23,10 @@ class Product extends Model
 	    $showp = Product::where('category_id', '=', $id)->get();
 	    return $showp;
     }
+
+    public static function relateBelong() {
+
+        return $this->belongsTo('App\Category');
+    }
 	
 }
