@@ -589,3 +589,11 @@
   background-color: #ce2a60;
   margin: 36px auto 0 auto;
 }
+
+.err {
+  position: absolute;
+  top: -14px;
+  font-size: 12px;
+  left: 105px;
+  color:red;
+}

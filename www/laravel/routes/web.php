@@ -112,5 +112,11 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'CustomerRegister@showCustomerRegister',
         'as' => 'customerregister'
     ]);
+
+
+     Route::post('/customerregister', [
+        'uses' => 'CustomerRegister@doCustomerRegister',
+        'as' => 'customerregister'
+    ]);
     
 });

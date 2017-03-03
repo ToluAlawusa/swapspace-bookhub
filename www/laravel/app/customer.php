@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Eloquent 
+class Customer extends Model 
 {
   # eloquent needs u to define ur preferred table name and primary key for overide
   protected $table = 'customers';
