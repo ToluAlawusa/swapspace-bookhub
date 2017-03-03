@@ -12,9 +12,14 @@
 */
 
 Route::group(['middleware' => ['web']], function (){
-    Route::get('/index', function (){
-        return view('index');
-    })->name('index');
+    // Route::get('/index', function (){
+    //     return view('index');
+    // })->name('index');
+
+    Route::get('/index', [
+        'uses' => 'Index@showIndexPage',
+        'as' => 'index'
+    ]);
 
     Route::get('/adminlogin', [
         'uses' => 'AdminLogin@showAdminLogin',
