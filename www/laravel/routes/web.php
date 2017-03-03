@@ -103,11 +103,14 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'deleteproduct'
     ]);
 
-
-
 	 Route::get('/adminlogout', [
 	    'uses' => 'AdminLogout@doAdminLogout',
 	    'as' => 'adminlogout'
 	]);
+
+     Route::get('/customerregister', [
+        'uses' => 'CustomerRegister@showCustomerRegister',
+        'as' => 'customerregister'
+    ]);
     
 });
