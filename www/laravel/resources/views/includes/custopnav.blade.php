@@ -3,7 +3,7 @@
     <a href="index.html"><h3 class="brand"><span>B</span>rain<span>F</span>ood</h3></a>
       <ul class="top-nav-list">
         <li class="top-nav-listItem Home"><a href="/userhomepage">Home</a></li>
-        <li class="top-nav-listItem catalogue"><a href="/usercatalogue">Catalogue</a></li>
+        <li class="top-nav-listItem catalogue"><a href="/customercatalogue">Catalogue</a></li>
 
        
 

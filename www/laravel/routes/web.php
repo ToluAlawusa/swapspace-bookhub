@@ -130,4 +130,14 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'CustomerLogin@doCustomerLogin',
         'as' => 'customerlogin'
     ]);
+
+     Route::get('/customercatalogue', [
+        'uses' => 'CustomerCatalogue@showCustomerCatalogue',
+        'as' => 'customercatalogue'
+    ]);
+
+     Route::get('/customercatalogue/{id}/', [
+        'uses' => 'CustomerCatalogue@showCatalogueCategories',
+        'as' => 'customercatalogue'
+    ]);
 });
