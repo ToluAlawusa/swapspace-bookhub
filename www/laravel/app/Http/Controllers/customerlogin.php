@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Admin;
+use App\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 
-class AdminLogin extends Controller 
+class CustomerLogin extends Controller 
 {
 
-	public function showAdminLogin() {
+	public function showCustomerLogin() {
 
-          return view('adminlogin');
+          return view('customerlogin');
 	}
 
-	public function doAdminLogin(Request $request) {
+
+	public function doCustomerLogin(Request $request) {
 
        $this->validate($request, [
                 'email' => 'required|email',
@@ -27,8 +29,12 @@ class AdminLogin extends Controller
             	return redirect()->back()->with(['fail' => 'email or password incorrect']);
             }
 
-            
 
-            return redirect()->route('addcategory');
+            if(Session::has('customer_id')){
+                Session::get('customer_id');
+            }
+
+            return redirect()->route('index');
     }
+
 }

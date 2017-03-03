@@ -119,4 +119,15 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'customerregister'
     ]);
     
+
+    Route::get('/customerlogin', [
+        'uses' => 'CustomerLogin@showCustomerLogin',
+        'as' => 'customerlogin'
+    ]);
+
+
+     Route::post('/customerlogin', [
+        'uses' => 'CustomerLogin@doCustomerLogin',
+        'as' => 'customerlogin'
+    ]);
 });

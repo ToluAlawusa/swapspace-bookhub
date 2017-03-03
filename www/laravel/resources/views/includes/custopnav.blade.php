@@ -11,7 +11,7 @@
 
       
 
-        <li class="top-nav-listItem login"><a href="/userlogin">Login</a></li>
+        <li class="top-nav-listItem login"><a href="/customerlogin">Login</a></li>
         <li class="top-nav-listItem register"><a href="/customerregister">Register</a></li>
         
 
