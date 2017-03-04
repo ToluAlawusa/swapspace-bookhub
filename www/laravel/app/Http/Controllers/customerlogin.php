@@ -29,10 +29,9 @@ class CustomerLogin extends Controller
             	return redirect()->back()->with(['fail' => 'email or password incorrect']);
             }
 
+            $customer = Customer::where("email", $request['email'])->first();
 
-            if(Session::has('customer_id')){
-                Session::get('customer_id');
-            }
+            $request->session()->put("customer_id", $customer->customer_id);
 
             return redirect()->route('index');
     }

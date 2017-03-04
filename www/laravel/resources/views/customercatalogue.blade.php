@@ -18,9 +18,9 @@
     <div class="main-book-list horizontal-book-list">
       <ul class="book-list">
        @foreach ($prod as $prod)
-              <a href="/userbookpreview/{!! $prod->product_id !!}/">
+              <a href="/customerbookpreview/{!! $prod->product_id !!}/">
                        <li class="book">
-                       <div class="book-cover" style="background: url({!! $prod->image !!}) 
+                       <div class="book-cover" style="background: url('{{ asset('uploads/' . $prod->image )}}') 
                        no-repeat center; background-size: cover; width: 168px;
                        height: 218px;"></div>
                        <div class="book-price"><p>${!! $prod->price !!}</p></div>

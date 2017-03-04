@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Review extends Model 
 {
@@ -11,13 +12,14 @@ class Review extends Model
   protected $primaryKey = 'review_id';
 
   public static function getReviews() {
-        $review = Reviews::all();
+        $review = Review::all();
         return $review;
   }
 
   public static function getReviewsId($id) {
     // $reviewid = Reviews::all();
-  		$revid = Reviews::where("product_id", $id)->get();
+  		$revid = Review::where("product_id", $id)->get();
+
       if($revid != null) {
         return $revid;
       } else {

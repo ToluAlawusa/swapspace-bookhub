@@ -140,4 +140,15 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'CustomerCatalogue@showCatalogueCategories',
         'as' => 'customercatalogue'
     ]);
+
+    Route::get('/customerbookpreview/{id}/', [
+        'uses' => 'CustomerBookPreview@showBookPreview',
+        'as' => 'customerbookpreview'
+    ]);
+
+
+     Route::post('/customerbookpreview/{id}/', [
+        'uses' => 'CustomerBookPreview@doAddComments',
+        'as' => 'customerbookpreview'
+    ]);
 });

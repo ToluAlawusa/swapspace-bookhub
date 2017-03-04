@@ -21,10 +21,11 @@ class AddProduct extends Controller
              'author' => 'required',
              "price" => 'required',
              "category" => 'required',
+             "image" => 'required'
         ]);
 
         $rnd = uniqid(rand(0, 9), true);
-        $imageName = $rnd . ''.$request->file('image')->getClientOriginalExtension();
+        $imageName = $rnd . '.'.$request->file('image')->getClientOriginalExtension();
 
         $request->file('image')->move(
         base_path() . '/public/uploads/', $imageName
