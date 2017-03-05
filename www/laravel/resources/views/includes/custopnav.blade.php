@@ -20,7 +20,7 @@
           <div class="cart-item-indicator">
             <p>12</p>
           </div>
-          <a href="/usercart">Cart</a>
+          <a href="/customercart/{!! Session::get('customer_id') !!}/">Cart</a>
         </li>
         
       </ul>

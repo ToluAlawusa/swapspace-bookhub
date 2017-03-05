@@ -3,6 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Capsule\Manager;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class Cart extends Model 
 {
@@ -21,11 +24,11 @@ class Cart extends Model
   }
 
   public static function cartTable($user_id) {
-    $cart = DB::table('cart')
+    $cart = DB::table('carts')
     ->join('products', function($join){
-      $join->on('cart.product_id', '=', 'products.product_id');
+      $join->on('carts.product_id', '=', 'products.product_id');
 
-      })->where('user_id', '=', $user_id)
+      })->where('customer_id', '=', Session::get("customer_id"))
     ->get();
 
     return $cart;
@@ -35,8 +38,8 @@ class Cart extends Model
 
     $result = false;
 
-    $cproduct = DB::table('cart')->where('product_id', '=', $id)
-    ->where('user_id', '=', $_SESSION['user_id'])->get()->count();
+    $cproduct = DB::table('carts')->where('product_id', '=', $id)
+    ->where('customer_id', '=', Session::get("customer_id"))->get()->count();
 
     if($cproduct > 0){
       $result = true;
@@ -49,7 +52,7 @@ class Cart extends Model
 
   public static function cartCount($id) {
 
-    $chkcount = DB::table('cart')->where('user_id', '=', $id)->get()->count();
+    $chkcount = DB::table('carts')->where('customer_id', '=', $id)->get()->count();
 
     return $chkcount;
 

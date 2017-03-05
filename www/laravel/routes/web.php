@@ -151,4 +151,15 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'CustomerBookPreview@doAddComments',
         'as' => 'customerbookpreview'
     ]);
+
+    Route::get('/customercart/{id}/', [
+        'uses' => 'CustomerCart@showCustomerCart',
+        'as' => 'customercart'
+    ]);
+
+
+     Route::post('/customercart/{id}/', [
+        'uses' => 'CustomerCart@addToCart',
+        'as' => 'customercart'
+    ]);
 });

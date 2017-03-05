@@ -31,7 +31,8 @@ class CustomerLogin extends Controller
 
             $customer = Customer::where("email", $request['email'])->first();
 
-            $request->session()->put("customer_id", $customer->customer_id);
+            // $request->session()->put("customer_id", $customer->customer_id);
+            Session::put("customer_id", $customer->customer_id);
 
             return redirect()->route('index');
     }

@@ -25,7 +25,9 @@ class CustomerBookPreview extends Controller {
     public function doAddComments(Request $request, $id) {
 
 
-            $details = Customer::getCustomersId($request->session()->get("customer_id"))->first();
+            // $details = Customer::getCustomersById($request->session()->get("customer_id"))->first();
+
+            $details = Customer::getCustomersById(Session::get("customer_id"))->first();
 
 
             $review = new Review();

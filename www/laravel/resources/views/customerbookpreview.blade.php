@@ -14,10 +14,11 @@
          <h3 class="book-author">{!! $prodid->author_name !!}</h3>
          <h3 class="book-price">{!! $prodid->price !!}</h3>
 
-         <form action="/usercart/{!! $id !!}/" method="POST">
+         <form action="/customercart/{!! $id !!}/" method="POST">
          <label for="book-amout">Quantity</label>
          <input type="number" name="quan" class="book-amount text-field">
          <input type="submit" class="def-button add-to-cart" name="addto" value="Add to Cart">
+         <input type="hidden" value="{{ Session::token() }}" name="_token">
          </form>
 
         </div>   

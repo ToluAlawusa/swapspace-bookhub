@@ -15,7 +15,7 @@ class Customer extends Model
         return $customers;
   }
 
-  public static function getCustomersId($id) {
+  public static function getCustomersById($id) {
   		$customer = Customer::where("customer_id", '=', $id)->first();
   		return $customer;
   }
