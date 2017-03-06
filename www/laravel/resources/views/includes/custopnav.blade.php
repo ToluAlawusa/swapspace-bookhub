@@ -15,14 +15,17 @@
         <li class="top-nav-listItem register"><a href="/customerregister">Register</a></li>
         @endif
 
-        @if(Session::has('customer_id'))
+        
         <li class="top-nav-listItem cart">
           <div class="cart-item-indicator">
+          @if(Session::has('customer_id'))
             <p>{!! $totalItems !!}</p>
+            @else
+            <p>{!! 0 !!}</p>
+          @endif
           </div>
           <a href="/customercart/{!! Session::get('customer_id') !!}/">Cart</a>
         </li>
-        @endif
       </ul>
     <form class="search-brainfood">
       <input type="text" class="text-field" placeholder="Search all books">

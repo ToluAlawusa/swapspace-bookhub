@@ -20,7 +20,7 @@ class CustomerCheckout extends Controller
 	public function showCustomerCheckout($id) {
     
 
-        return view('customercheckout', ['cartlist'=>Cart::cartTable($id), 'prodid'=>Product::getProductById($id), 'id'=>$id, 'totalItems'=> $this->_cartCount,'totalPrice'=> Cart::getTotal($id)]);
+        return view('customercheckout', ['cartlist'=>Cart::cartTable($id), 'prodid'=>Product::getProductById($id), 'id'=>$id, 'totalItems'=> Cart::cartCount(Session::get("customer_id")),'totalPrice'=> Cart::getTotal($id)]);
     }
 
     public function doCheckout(Request $request, $id) {

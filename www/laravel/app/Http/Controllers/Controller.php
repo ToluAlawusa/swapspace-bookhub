@@ -13,14 +13,4 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected $_cartCount;
-
-	public function __construct(){
-
-		if(Session::has("customer_id")) {
-
-			$getTotal = Cart::cartCount(Session::get("customer_id"));
-			$this->_cartCount = ( $getTotal > 0) ? $getTotal : 0;
-		}
-	}
 }

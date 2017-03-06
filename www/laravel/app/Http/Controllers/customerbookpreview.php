@@ -8,6 +8,7 @@ use App\Splash;
 use App\Trending;
 use App\Customer;
 use App\Review;
+use App\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -18,7 +19,7 @@ class CustomerBookPreview extends Controller {
 
         //dump(Reviews::getReviewsId($id)); exit();
 
-        return view('customerbookpreview', ['review'=>Review::getReviewsId($id), 'prodid'=>Product::getProductById($id), 'id'=>$id, 'totalItems'=> $this->_cartCount]);
+        return view('customerbookpreview', ['review'=>Review::getReviewsId($id), 'prodid'=>Product::getProductById($id), 'id'=>$id, 'totalItems'=> Cart::cartCount(Session::get("customer_id"))]);
     
     }
 
@@ -39,7 +40,7 @@ class CustomerBookPreview extends Controller {
             $review->comments = $_REQUEST['comm'];
             $review->save();
 
-            return view('customerbookpreview', ['review'=>Review::getReviewsId($id), 'prodid'=>Product::getProductById($id), 'id'=>$id, 'totalItems'=> $this->_cartCount]);
+            return view('customerbookpreview', ['review'=>Review::getReviewsId($id), 'prodid'=>Product::getProductById($id), 'id'=>$id, 'totalItems'=> Cart::cartCount(Session::get("customer_id"))]);
 
        
     }

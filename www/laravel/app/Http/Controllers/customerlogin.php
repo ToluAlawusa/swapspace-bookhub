@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -33,6 +34,8 @@ class CustomerLogin extends Controller
 
             // $request->session()->put("customer_id", $customer->customer_id);
             Session::put("customer_id", $customer->customer_id);
+
+            Session::get('customer_id');
 
             return redirect()->route('index');
     }

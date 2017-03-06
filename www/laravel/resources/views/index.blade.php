@@ -2,30 +2,31 @@
 @section('content')
 
     <div class="book-display">
-        <a href="/userbookpreview">
-          <div class="display-book" style="background: url() 
+      @foreach ($splash as $splash)
+        <a href="/customerbookpreview/{!! $splash->product_id !!}/">
+          <div class="display-book" style="background: url('{{ asset('uploads/' . $splash->image )}}') 
           no-repeat center; background-size: cover; width: 190px;
           height: 270px;"></div>
       <div class="info">
-        <h2 class="book-title"></h2>
-          <h3 class="book-author"></h3>
-            <h3 class="book-price">$</h3></a>
+        <h2 class="book-title">{!! $splash->product_name !!}</h2>
+          <h3 class="book-author">{!! $splash->author_name !!}</h3>
+            <h3 class="book-price">${!! $splash->price !!}</h3></a>
       </div>
-                
+      @endforeach          
     </div>                 
     <div class="trending-books horizontal-book-list">
       <h3 class="header">Trending</h3>
       <ul class="book-list">
-       
+        @foreach ($trending as $trending)
           <li class="book">          
-            <a href="/userbookpreview">
-            <div class="book-cover" style="background: url() 
+            <a href="/customerbookpreview/{!! $trending->product_id !!}/">
+            <div class="book-cover" style="background: url('{{ asset('uploads/' . $trending->image )}}') 
             no-repeat center; background-size: cover; width: 168px;
             height: 218px;"></div>
-            <div class="book-price"><p>$</p></div>
+            <div class="book-price"><p>${!! $trending->price !!}</p></div>
             </a>
           </li>
-                       
+        @endforeach                 
       </ul>
     </div>
     <div class="recently-viewed-books horizontal-book-list">
@@ -51,5 +52,6 @@
         </li>
       </ul>
     </div>
+
 
 @endsection
