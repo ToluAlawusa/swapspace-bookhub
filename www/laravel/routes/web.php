@@ -171,5 +171,16 @@ Route::group(['middleware' => ['web']], function (){
     Route::post('/customerdeletecart/{id}/', [
         'uses' => 'CustomerDeleteCart@deleteCart',
         'as' => 'customerdeletecart'
-    ]); 
+    ]);
+
+
+    Route::get('/customercheckout/{id}/', [
+        'uses' => 'CustomerCheckout@showCustomerCheckout',
+        'as' => 'customercheckout'
+    ]);
+
+    Route::post('/customercheckout/{id}/', [
+        'uses' => 'CustomerCheckout@doCheckout',
+        'as' => 'customercheckout'
+    ]);
 });

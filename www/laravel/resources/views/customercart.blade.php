@@ -53,7 +53,7 @@
         <a href="#"><p>2</p></a>
         <a href="#"><p>3</p></a>
       </div>
-      <a href="/usercheckout/{!! Session::get('customer_id')!!}/"><button class="def-button checkout">
+      <a href="/customercheckout/{!! Session::get('customer_id')!!}/"><button class="def-button checkout">
       Checkout</button></a>
 
     </div>

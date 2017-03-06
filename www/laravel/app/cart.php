@@ -52,7 +52,7 @@ class Cart extends Model
 
   public static function cartCount($id) {
 
-    $chkcount = DB::table('carts')->where('customer_id', '=', $id)->get()->count();
+    $chkcount = DB::table('carts')->where('customer_id', '=', Session::get("customer_id"))->get()->count();
 
     return $chkcount;
 

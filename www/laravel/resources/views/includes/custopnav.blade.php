@@ -6,23 +6,23 @@
         <li class="top-nav-listItem catalogue"><a href="/customercatalogue">Catalogue</a></li>
 
        
-
+        @if(Session::has('customer_id'))
         <li class="top-nav-listItem login"><a href="/userlogout">Logout</a></li> 
 
       
-
+        @else
         <li class="top-nav-listItem login"><a href="/customerlogin">Login</a></li>
         <li class="top-nav-listItem register"><a href="/customerregister">Register</a></li>
-        
+        @endif
 
-      
+        @if(Session::has('customer_id'))
         <li class="top-nav-listItem cart">
           <div class="cart-item-indicator">
-            <p>12</p>
+            <p>{!! $totalItems !!}</p>
           </div>
           <a href="/customercart/{!! Session::get('customer_id') !!}/">Cart</a>
         </li>
-        
+        @endif
       </ul>
     <form class="search-brainfood">
       <input type="text" class="text-field" placeholder="Search all books">
