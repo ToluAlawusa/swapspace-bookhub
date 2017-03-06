@@ -19,21 +19,22 @@
        @foreach ($cartlist as $cartlist)
         <tr>
 
-          <td><a href="/userbookpreview/{!! $cartlist->product_id !!}/"><div class="book-cover b1" style="background: url('{{ asset('uploads/' . $cartlist->image )}}') 
+          <td><a href="/customerbookpreview/{!! $cartlist->product_id !!}/"><div class="book-cover b1" style="background: url('{{ asset('uploads/' . $cartlist->image )}}') 
            no-repeat center; background-size: cover; width: 81px;
            height: 100px;"></div></a></td>
           <td><p class="book-price">{!! $cartlist->price !!}</p></td>
           <td><p class="quantity">{!! $cartlist->quantity !!}</p></td>
           <td><p class="total">{!! $cartlist->quantity * $cartlist->price !!}</p></td>
           <td>
-            <form class="update" action="/userupdatecart/{!! $id !!}/" method="POST">
+            <form class="update" action="/customerupdatecart/{!! $id !!}/" method="POST">
             <input type="number" name="quant" class="text-field qty">
             <input type="hidden" value="{!!$cartlist->cart_id!!}" name="hid">
             <input type="submit" name="cquan" class="def-button change-qty" value="Change Qty">
+            <input type="hidden" value="{{ Session::token() }}" name="_token">
             </form>
           </td>
           <td>
-            <form action="/userdeletecart/{!! $id !!}/" method="POST">
+            <form action="/customerdeletecart/{!! $id !!}/" method="POST">
             <input type="hidden" value="{!!$cartlist->cart_id!!}" name="delhid">
             <a href="/deletecart/{!! $cartlist->product_id !!}/"><button class="def-button remove-item">Remove Item</button></a>
             <input type="hidden" value="{{ Session::token() }}" name="_token">

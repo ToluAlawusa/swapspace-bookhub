@@ -162,4 +162,9 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'CustomerCart@addToCart',
         'as' => 'customercart'
     ]);
+
+    Route::post('/customerupdatecart/{id}/', [
+        'uses' => 'CustomerUpdateCart@updateCart',
+        'as' => 'customerupdatecart'
+    ]); 
 });
