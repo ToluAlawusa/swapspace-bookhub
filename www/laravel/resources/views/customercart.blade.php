@@ -36,7 +36,7 @@
           <td>
             <form action="/customerdeletecart/{!! $id !!}/" method="POST">
             <input type="hidden" value="{!!$cartlist->cart_id!!}" name="delhid">
-            <a href="/deletecart/{!! $cartlist->product_id !!}/"><button class="def-button remove-item">Remove Item</button></a>
+            <a href="/customerdeletecart/{!! $cartlist->product_id !!}/"><button class="def-button remove-item">Remove Item</button></a>
             <input type="hidden" value="{{ Session::token() }}" name="_token">
             </form>
           </td>

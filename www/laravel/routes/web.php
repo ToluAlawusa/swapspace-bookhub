@@ -166,5 +166,10 @@ Route::group(['middleware' => ['web']], function (){
     Route::post('/customerupdatecart/{id}/', [
         'uses' => 'CustomerUpdateCart@updateCart',
         'as' => 'customerupdatecart'
+    ]);
+
+    Route::post('/customerdeletecart/{id}/', [
+        'uses' => 'CustomerDeleteCart@deleteCart',
+        'as' => 'customerdeletecart'
     ]); 
 });
