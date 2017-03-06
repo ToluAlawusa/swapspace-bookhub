@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 
-class AdminLogout extends Controller {
 
-	public function doAdminLogout() {
+class CustomerLogout extends Controller {
+
+	public function doCustomerLogout() {
+
 
 		Session::all();
 

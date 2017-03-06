@@ -183,4 +183,10 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'CustomerCheckout@doCheckout',
         'as' => 'customercheckout'
     ]);
+
+
+    Route::get('/customerlogout', [
+        'uses' => 'CustomerLogout@doCustomerLogout',
+        'as' => 'customerlogout'
+    ]);
 });

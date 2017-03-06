@@ -12,6 +12,6 @@ class Index extends Controller {
 
     public function showIndexPage() {
     	
-      return view('index');
+      return view('index', ['totalItems'=> $this->_cartCount]);
     }
 }
