@@ -3,7 +3,7 @@
 
     <div class="wrapper">
         <h1 id="register-label">Add Category</h1>
-		<hr>
+		<hr/>
 
 		<form id="register" action="{{ route('addcategory') }}" method="POST">
 		<div>
@@ -24,4 +24,4 @@
 		</form>
 	</div>
 
-@endsection
+@stop

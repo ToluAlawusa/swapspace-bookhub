@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\DB;
 class CustomerCheckout extends Controller 
 {
 
+    
+
 	public function showCustomerCheckout($id) {
     
 

@@ -1,5 +1,5 @@
 @extends('layouts.cus')
-@section('browsertitle')customerbookpreview @stop
+@section('browsertitle')customercart @stop
 @section('content')
 
 

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet"  href="{{ URL::to('src/css/ad_styles.css') }} ">
+        
+        <link rel="stylesheet" type="text/css"  href="{{ URL::to('src/css/ad_styles.css') }} ">
         <title>@yield('title')</title>
     </head>
-    <body id="home">
+    <body style="height: 100%;">
         <!-- top bar starts here -->
             @include('includes.adminheader')
         <!-- main content starts here -->
@@ -13,7 +13,7 @@
             @yield('content')
         </div>
 
-        <section class="foot">
+        <section class="foot" style="position: fixed; bottom: 0; left: 0; width: 100%; height: 6%; color: white;">
             <!-- footer starts here-->
             <div>
                 <p>&copy; 2016</p>

@@ -152,6 +152,8 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'customerbookpreview'
     ]);
 
+    
+
     Route::get('/customercart/{id}/', [
         'uses' => 'CustomerCart@showCustomerCart',
         'as' => 'customercart'

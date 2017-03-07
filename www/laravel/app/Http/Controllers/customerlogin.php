@@ -7,7 +7,8 @@ use App\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-
+use Tymon\JWTAuth\Exceptions\JWTException;
+use JWTAuth;
 
 class CustomerLogin extends Controller 
 {
@@ -26,9 +27,21 @@ class CustomerLogin extends Controller
             ]);
 
             
-            if(!Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
-            	return redirect()->back()->with(['fail' => 'email or password incorrect']);
-            }
+            // if(!Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
+            // 	return redirect()->back()->with(['fail' => 'email or password incorrect']);
+            // }
+
+            $credentials = $request->only('email', 'password');
+
+            try {
+                if(! $token = JWTAuth::attempt($credentials)) {
+                    return redirect()->back()->with(['fail' => 'email or password incorrect']);
+                }
+
+             } catch (JWTException $e) {
+                    return redirect()->back()->with(['fail' => 'could not create token']);
+
+             }
 
             $customer = Customer::where("email", $request['email'])->first();
 
@@ -36,6 +49,7 @@ class CustomerLogin extends Controller
             Session::put("customer_id", $customer->customer_id);
 
             Session::get('customer_id');
+
 
             return redirect()->route('index');
     }

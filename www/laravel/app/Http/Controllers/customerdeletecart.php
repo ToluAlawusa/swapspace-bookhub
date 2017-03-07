@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Session;
 
 class CustomerDeleteCart extends Controller 
 {
+
+	
+
+
 	public function deleteCart(Request $request, $id) {
     	
     	$uid = Session::get('customer_id');

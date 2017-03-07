@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Session;
 
 class CustomerBookPreview extends Controller {
 
+    
+
     public function showBookPreview($id) {
 
         //dump(Reviews::getReviewsId($id)); exit();

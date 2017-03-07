@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Session;
 
 class CustomerCart extends Controller {
 
+    
+
 	public function showCustomerCart($id) {
         
         return view('customercart', ['cartlist'=>Cart::cartTable($id), 'prodid'=>Product::getProductById($id), 'id'=>$id, 'totalItems'=> Cart::cartCount(Session::get("customer_id"))]);

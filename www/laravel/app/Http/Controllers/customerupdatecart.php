@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Session;
 class CustomerUpdateCart extends Controller 
 {
 
+
     public function updateCart(Request $request, $id) {
 
     	 $this->validate($request, [
