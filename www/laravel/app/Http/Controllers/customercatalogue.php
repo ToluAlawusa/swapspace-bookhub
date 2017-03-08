@@ -8,6 +8,7 @@ use App\Splash;
 use App\Cart;
 use App\Trending;
 use App\Customer;
+use Illuminate\Support\Facades\Session;
 
 
 class CustomerCatalogue extends Controller {

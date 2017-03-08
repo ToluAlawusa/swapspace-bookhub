@@ -1,5 +1,5 @@
 <section>
-    <div class="mast">
+    <div class="mast" style="margin-bottom: 154px;">
         <h1>T<span>SSB</span></h1>
         <nav>
             <ul class="clearfix">

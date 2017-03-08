@@ -30,6 +30,10 @@ class CustomerBookPreview extends Controller {
 
             // $details = Customer::getCustomersById($request->session()->get("customer_id"))->first();
 
+        if(Session::has("customer_id")) {
+
+            $udd = Session::get("customer_id");
+
             $details = Customer::getCustomersById(Session::get("customer_id"))->first();
 
 
@@ -44,7 +48,10 @@ class CustomerBookPreview extends Controller {
 
             return view('customerbookpreview', ['review'=>Review::getReviewsId($id), 'prodid'=>Product::getProductById($id), 'id'=>$id, 'totalItems'=> Cart::cartCount(Session::get("customer_id"))]);
 
-       
+        } 
+
+            header("Location: /customerlogin");
+   
     }
 
 }
