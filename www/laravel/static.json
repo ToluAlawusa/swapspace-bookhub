@@ -1,0 +1,5 @@
+{
+  "root": "index.php",
+  "clean_urls": true,
+  "error_page": "index.php"
+}
