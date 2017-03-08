@@ -27,6 +27,11 @@ class CustomerCheckout extends Controller
 
     public function doCheckout(Request $request, $id) {
 
+    	 $this->validate($request, [
+            'phone' => 'required',
+             'address' => 'required',
+             "postcode" => 'required',
+        ]);
 
         $data = Cart::cartTable(Session::get('customer_id'));
 
