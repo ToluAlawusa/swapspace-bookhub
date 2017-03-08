@@ -45,15 +45,16 @@
        @endforeach
       </tbody>
     </table>
-    <div class="cart-table-actions">
-      <button class="def-button previous">previous</button>
-      <button class="def-button next">next</button>
-      <div class="index">
-        <a href="#"><p>1</p></a>
-        <a href="#"><p>2</p></a>
-        <a href="#"><p>3</p></a>
+    <div class="cart-table-actions" style="margin: 54px auto 0 auto;">
+      <button class="def-button previous" style="float: left; margin-right: 24px;">previous</button>
+      <div class="index" style="float: left;">
+        <a href="#" style="float: left;"><p>1</p></a>
+        <a href="#" style="float: left; margin: 0 36px;"><p>2</p></a>
+        <a href="#" style="float: left;"><p>3</p></a>
       </div>
-      <a href="/customercheckout/{!! Session::get('customer_id')!!}/"><button class="def-button checkout">
+      <button class="def-button next" style="float: left; margin-right: 24px">next</button>
+      
+      <a href="/customercheckout/{!! Session::get('customer_id')!!}/" style="display: block; margin: 56px auto 0 auto;"><button class="def-button checkout">
       Checkout</button></a>
 
     </div>
